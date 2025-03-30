@@ -37,7 +37,7 @@ func NewSortedSetCache(addr, password string, db int, setKey string, expiration 
 	// 接続テスト
 	_, err := client.Ping(ctx).Result()
 	if err != nil {
-		return nil, fmt.Errorf("Redis接続エラー: %v", err)
+		return nil, fmt.Errorf("redis接続エラー: %v", err)
 	}
 
 	return &SortedSetCache{
